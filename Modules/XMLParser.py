@@ -16,7 +16,7 @@ def process_lattice(lattice, id):
 
     if len(dimension) == 2:
         dimension = [dimension[0], dimension[1], 1] 
-        pitch = [pitch[0], pitch[1], 1e5] # create large shapes in z and let them be clipped by their container
+        pitch = [pitch[0], pitch[1], 30] # moderate z boxes to be clipped by their container
         lower_left = [lower_left[0], lower_left[1], 0.0]
 
     # create a fill cell which holds each universe at its correct location
