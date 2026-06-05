@@ -725,7 +725,7 @@ def plane_intersect(plane_list, externalBox, cutBoundary):
         pyp = Part.Plane(FreeCAD.Vector(0, externalBox.YMax, 0), XYZ[1])
         pzm = Part.Plane(FreeCAD.Vector(0, 0, externalBox.ZMin), XYZ[2])
         pzp = Part.Plane(FreeCAD.Vector(0, 0, externalBox.ZMax), XYZ[2])
-        # This block of code was changed on 05/28/26
+        # The above block of code was added on 05/28/26
         # pxm = Part.Plane(XYZ[0], FreeCAD.Vector(externalBox.XMin, 0, 0))
         # pxp = Part.Plane(XYZ[0], FreeCAD.Vector(externalBox.XMax, 0, 0))
         # pym = Part.Plane(XYZ[1], FreeCAD.Vector(0, externalBox.YMin, 0))
