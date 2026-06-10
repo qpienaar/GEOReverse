@@ -71,7 +71,7 @@ class XmlInput:
                     cad_c.surfaces = {}
                     cad_c.surfaceList = []
                     if c.shape is None:
-                        c.shape = Part.makeBox(1.5, 1.5, 214.2, FreeCAD.Vector(0, 0, 0))
+                        c.shape = Part.makeBox(3, 3, 214.2, FreeCAD.Vector(0, 0, 0))
                     cad_c.shape = c.shape
                     # if c.shape is not None:
                     #     # lattice-generated cell — shape already set by process_lattice
