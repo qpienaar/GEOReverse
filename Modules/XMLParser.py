@@ -16,7 +16,7 @@ def process_lattice(lattice, id):
 
     if len(dimension) == 2:
         dimension = [dimension[0], dimension[1], 1] 
-        pitch = [pitch[0], pitch[1], 24.21] # moderate z boxes to be clipped by their container
+        pitch = [pitch[0], pitch[1], 214.2] # z length of c5g7 with 1 layer
         lower_left = [lower_left[0], lower_left[1], 0.0]
 
     # create a fill cell which holds each universe at its correct location
