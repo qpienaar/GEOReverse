@@ -16,7 +16,7 @@ def process_lattice(lattice, id):
 
     if len(dimension) == 2:
         dimension = [dimension[0], dimension[1], 1] 
-        pitch = [pitch[0], pitch[1], 21.42] # z length of c5g7 with 1 layer
+        pitch = [pitch[0], pitch[1], 214.2] # z length of c5g7 with 1 layer
         lower_left = [lower_left[0], lower_left[1], 0.0]
 
     # create a fill cell which holds each universe at its correct location
@@ -75,13 +75,6 @@ class CellCard:
             self.MAT = 0 if data["material"] == "void" else int(data["material"])
         else:
             self.MAT = None
-
-        # if "universe" in data.keys():
-        #     self.U = 0 if int(data["universe"]) == 1 else int(data["universe"])
-        # else:
-        #     self.U = 0
-
-        # In CellCard.processData — remove the universe remapping entirely:
 
         if "universe" in data.keys():
             self.U = int(data["universe"])   # trust the XML as-is
