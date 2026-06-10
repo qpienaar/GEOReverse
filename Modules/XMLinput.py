@@ -71,46 +71,46 @@ class XmlInput:
                     cad_c.surfaces = {}
                     cad_c.surfaceList = []
                     cad_c.shape = c.shape
-                    if c.shape is not None:
-                        # lattice-generated cell — shape already set by process_lattice
-                        cad_c.shape = c.shape
-                    else:
-                        # #compute bounding sphere from filled universe
-                        # bounding_radius = self.get_bounding_radius(c.FILL, self.Universes, self.surfaces) * 1.2
-                        # if bounding_radius == 0.0:
-                        #     print(f"Setting {c.name}'s bounding radius to default as another one could not be found")
-                        #     bounding_radius = settings.universe_radius
-                        # cad_c.shape = Part.makeSphere(bounding_radius, FreeCAD.Vector(0, 0, 0))
+                    # if c.shape is not None:
+                    #     # lattice-generated cell — shape already set by process_lattice
+                    #     cad_c.shape = c.shape
+                    # else:
+                    #     # #compute bounding sphere from filled universe
+                    #     # bounding_radius = self.get_bounding_radius(c.FILL, self.Universes, self.surfaces) * 1.2
+                    #     # if bounding_radius == 0.0:
+                    #     #     print(f"Setting {c.name}'s bounding radius to default as another one could not be found")
+                    #     #     bounding_radius = settings.universe_radius
+                    #     # cad_c.shape = Part.makeSphere(bounding_radius, FreeCAD.Vector(0, 0, 0))
                         
-                        cad_c = CadCell(settings=settings)
-                        cad_c.name = c.name
-                        cad_c.U = c.U
-                        cad_c.FILL = c.FILL
-                        cad_c.MAT = c.MAT
-                        cad_c.TRFL = c.TR
-                        cad_c.CurrentTR = c.TR
-                        cad_c.surfaces = {}
-                        cad_c.surfaceList = []
-                        cad_c.shape = Part.makeSphere(25, FreeCAD.Vector(0, 0, 0))
+                    #     cad_c = CadCell(settings=settings)
+                    #     cad_c.name = c.name
+                    #     cad_c.U = c.U
+                    #     cad_c.FILL = c.FILL
+                    #     cad_c.MAT = c.MAT
+                    #     cad_c.TRFL = c.TR
+                    #     cad_c.CurrentTR = c.TR
+                    #     cad_c.surfaces = {}
+                    #     cad_c.surfaceList = []
+                    #     cad_c.shape = Part.makeSphere(25, FreeCAD.Vector(0, 0, 0))
 
                     selected_cells[name] = cad_c
-                else:
-                    # cells with no geometry and no fill - large container which will be clipped by interferencia 
-                    cad_c = CadCell(settings=settings)
-                    cad_c.name = c.name
-                    cad_c.U = c.U
-                    cad_c.FILL = None
-                    cad_c.MAT = c.MAT
-                    cad_c.TRFL = c.TR
-                    cad_c.CurrentTR = c.TR
-                    cad_c.surfaces = {}
-                    cad_c.surfaceList = []
-                    bounding_radius = self.get_bounding_radius(c.U, self.Universes, self.surfaces) * 1.2
-                    if bounding_radius == 0:
-                        print(f"Setting {c.name}'s bounding radius to default as another one could not be found")
-                        bounding_radius = settings.universe_radius
-                    cad_c.shape = Part.makeSphere(bounding_radius, FreeCAD.Vector(0, 0, 0))
-                    selected_cells[name] = cad_c
+                # else:
+                #     # cells with no geometry and no fill - large container which will be clipped by interferencia 
+                #     cad_c = CadCell(settings=settings)
+                #     cad_c.name = c.name
+                #     cad_c.U = c.U
+                #     cad_c.FILL = None
+                #     cad_c.MAT = c.MAT
+                #     cad_c.TRFL = c.TR
+                #     cad_c.CurrentTR = c.TR
+                #     cad_c.surfaces = {}
+                #     cad_c.surfaceList = []
+                #     bounding_radius = self.get_bounding_radius(c.U, self.Universes, self.surfaces) * 1.2
+                #     if bounding_radius == 0:
+                #         print(f"Setting {c.name}'s bounding radius to default as another one could not be found")
+                #         bounding_radius = settings.universe_radius
+                #     cad_c.shape = Part.makeSphere(bounding_radius, FreeCAD.Vector(0, 0, 0))
+                #     selected_cells[name] = cad_c
 
             if selected_cells:
                 FilteredCells[U] = selected_cells
